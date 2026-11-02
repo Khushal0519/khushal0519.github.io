@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Khushal Chauhan — MSc Applied Cyber Security graduate with experience in vulnerability assessment, security operations, infrastructure security and cybersecurity research.">
+  <meta name="author" content="Khushal Chauhan">
+  <title>About Me | Khushal Chauhan</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+
+  <!-- All new About-page styling is scoped, so the other pages remain unchanged. -->
+  <style>
+    body.about-showcase { background: #fff; }
+    body.about-showcase .about-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background: #f4f8ff;
+      border-bottom: 1px solid #e3eaf5;
+    }
+    body.about-showcase .about-hero-image {
+      position: absolute;
+      z-index: -2;
+      inset: 0 0 0 38%;
+      width: 62%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 44%;
+    }
+    body.about-showcase .about-hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(90deg,
+        #fff 0%,
+        rgba(255,255,255,.99) 30%,
+        rgba(255,255,255,.92) 44%,
+        rgba(255,255,255,.58) 60%,
+        rgba(244,249,255,.06) 85%),
+        linear-gradient(0deg, rgba(255,255,255,.97), transparent 18%);
+      pointer-events: none;
+    }
+    body.about-showcase .about-hero-inner {
+      position: relative;
+      padding-top: 68px;
+      padding-bottom: 44px;
+      min-height: 570px;
+    }
+    body.about-showcase .about-hero-copy {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+    }
+    body.about-showcase .about-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 19px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .19em;
+      color: #4f607e;
+      text-transform: uppercase;
+    }
+    body.about-showcase .about-eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      border-radius: 2px;
+      background: #2855f3;
+    }
+    body.about-showcase .about-title {
+      margin: 0;
+      color: #0d1d3e;
+      font-size: clamp(41px, 4.15vw, 62px);
+      line-height: 1.085;
+      font-weight: 800;
+      letter-spacing: -.055em;
+    }
+    body.about-showcase .about-title span {
+      display: block;
+      color: #2855f3;
+    }
+    body.about-showcase .about-intro {
+      max-width: 575px;
+      margin: 25px 0 0;
+      color: #455676;
+      font-size: 16px;
+      line-height: 1.72;
+      font-weight: 400;
+    }
+    body.about-showcase .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      width: min(680px, 100%);
+      margin-top: 31px;
+    }
+    body.about-showcase .about-stat {
+      min-width: 0;
+      min-height: 91px;
+      padding: 17px 17px 14px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid rgba(217,227,244,.88);
+      border-radius: 14px;
+      box-shadow: 0 7px 19px rgba(13,37,81,.04);
+      backdrop-filter: blur(9px);
+    }
+    body.about-showcase .about-stat strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #2855f3;
+      font-size: clamp(23px, 2.1vw, 31px);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+    body.about-showcase .about-stat span {
+      display: block;
+      color: #4b5b7a;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    body.about-showcase .about-quick-info {
+      position: absolute;
+      z-index: 3;
+      top: 54px;
+      right: 0;
+      width: 275px;
+      padding: 13px 19px;
+      background: rgba(255,255,255,.90);
+      border: 1px solid rgba(255,255,255,.88);
+      border-radius: 16px;
+      box-shadow: 0 14px 40px rgba(20,45,88,.13);
+      backdrop-filter: blur(16px);
+    }
+    body.about-showcase .about-quick-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+    }
+    body.about-showcase .about-quick-item + .about-quick-item {
+      border-top: 1px solid #e5eaf3;
+    }
+    body.about-showcase .about-quick-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      color: #2855f3;
+      background: #edf3ff;
+      border-radius: 11px;
+    }
+    body.about-showcase .about-quick-icon svg,
+    body.about-showcase .about-interest-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    body.about-showcase .about-quick-item strong {
+      display: block;
+      color: #122448;
+      font-size: 13px;
+      font-weight: 750;
+      line-height: 1.4;
+    }
+    body.about-showcase .about-quick-item span:last-child {
+      display: block;
+      margin-top: 2px;
+      color: #536481;
+      font-size: 11.5px;
+      line-height: 1.4;
+    }
+    body.about-showcase .about-photo-credit {
+      position: absolute;
+      bottom: 7px;
+      right: 0;
+      z-index: 3;
+      margin: 0;
+      font-size: 10px;
+      color: #5c6a80;
+      background: rgba(255,255,255,.65);
+      border-radius: 5px;
+      padding: 3px 6px;
+    }
+    body.about-showcase .about-photo-credit a {
+      color: #2855f3;
+      text-decoration: none;
+    }
+    body.about-showcase .about-interests {
+      padding: 34px 0 42px;
+      background: #fff;
+    }
+    body.about-showcase .about-interests-title {
+      margin: 0 0 24px;
+      font-size: 24px;
+      font-weight: 800;
+      color: #0d1d3e;
+      letter-spacing: -.035em;
+    }
+    body.about-showcase .about-interest-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0;
+    }
+    body.about-showcase .about-interest {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+      padding: 9px 16px;
+      border-right: 1px solid #e3eaf4;
+    }
+    body.about-showcase .about-interest:first-child { padding-left: 0; }
+    body.about-showcase .about-interest:last-child { border-right: none; }
+    body.about-showcase .about-interest-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 48px;
+      width: 48px;
+      height: 48px;
+      border-radius: 13px;
+      background: #eaf0ff;
+      color: #2855f3;
+    }
+    body.about-showcase .about-interest span:last-child {
+      color: #263654;
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+    body.about-showcase .about-detail {
+      background: #f7f9fd;
+      border-top: 1px solid #e6ebf5;
+      padding: 53px 0 59px;
+    }
+    body.about-showcase .about-detail h2 {
+      color: #112348;
+      font-size: clamp(26px,2.8vw,36px);
+      line-height: 1.15;
+      letter-spacing: -.04em;
+      margin: 0 0 24px;
+    }
+    body.about-showcase .about-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 18px;
+    }
+    body.about-showcase .about-detail-card {
+      background: #fff;
+      border: 1px solid #e0e7f3;
+      border-radius: 17px;
+      padding: 24px;
+    }
+    body.about-showcase .about-detail-card h3 {
+      color: #142648;
+      font-size: 17px;
+      margin: 0 0 12px;
+    }
+    body.about-showcase .about-detail-card p {
+      color: #52617a;
+      font-size: 14px;
+      line-height: 1.75;
+      margin: 0;
+    }
+    body.about-showcase .about-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    body.about-showcase .about-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 47px;
+      padding: 0 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    body.about-showcase .about-actions .action-primary {
+      background: #2855f3;
+      color: #fff;
+    }
+    body.about-showcase .about-actions .action-secondary {
+      background: #fff;
+      color: #16305c;
+      border: 1px solid #cdd8ed;
+    }
+    body.about-showcase .about-actions a:hover { filter: brightness(.97); }
+
+
+    /* RESEARCH AND EXPERIENCE — KEEP THE ORIGINAL PORTRAIT ON THE PAGE */
+    body.about-showcase .about-story-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 290px) minmax(0, 1fr);
+      align-items: start;
+      gap: clamp(25px, 4vw, 56px);
+    }
+    body.about-showcase .about-story-picture {
+      border-radius: 20px;
+      overflow: hidden;
+      background: #e7eef9;
+      aspect-ratio: 0.78;
+      box-shadow: 0 12px 32px rgba(10, 30, 70, .07);
+    }
+    body.about-showcase .about-story-picture img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+    body.about-showcase .about-story-copy .about-eyebrow { margin-bottom: 11px; }
+    body.about-showcase .about-story-copy h2 { max-width: 760px; }
+    body.about-showcase .about-story-copy p:not(.about-eyebrow) {
+      max-width: 850px;
+      margin: 0 0 15px;
+      color: #50617d;
+      font-size: 14.5px;
+      line-height: 1.8;
+    }
+    body.about-showcase .about-story-copy .about-actions { margin-top: 23px; }
+    @media (max-width: 760px) {
+      body.about-showcase .about-story-grid { grid-template-columns: minmax(0,1fr); }
+      body.about-showcase .about-story-picture { max-width: 270px; width: 100%; }
+    }
+
+    @media (max-width: 1180px) {
+      body.about-showcase .about-quick-info { right: 20px; width: 240px; }
+      body.about-showcase .about-hero-copy { max-width: 560px; }
+      body.about-showcase .about-hero-inner { padding-top: 60px; }
+    }
+    @media (max-width: 940px) {
+      body.about-showcase .about-hero-image {
+        inset: 0 0 auto 0;
+        width: 100%;
+        height: 285px;
+        object-position: center 36%;
+      }
+      body.about-showcase .about-hero::before {
+        background: linear-gradient(to bottom,
+          rgba(244,249,255,.03) 0,
+          rgba(255,255,255,.58) 215px,
+          #fff 293px);
+      }
+      body.about-showcase .about-hero-inner {
+        min-height: 0;
+        padding-top: 265px;
+        padding-bottom: 38px;
+      }
+      body.about-showcase .about-hero-copy { max-width: 100%; }
+      body.about-showcase .about-quick-info {
+        position: static;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3,minmax(0,1fr));
+        margin-top: 24px;
+        padding: 10px 15px;
+      }
+      body.about-showcase .about-quick-item { padding: 8px; }
+      body.about-showcase .about-quick-item + .about-quick-item {
+        border-top: none;
+        border-left: 1px solid #e5eaf3;
+      }
+      body.about-showcase .about-interest-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+      body.about-showcase .about-interest { padding: 11px; border: 1px solid #e3eaf4; border-radius: 12px; }
+      body.about-showcase .about-interest:first-child { padding-left: 11px; }
+    }
+    @media (max-width: 650px) {
+      body.about-showcase .about-hero-inner { padding-top: 240px; }
+      body.about-showcase .about-hero-image { height: 260px; }
+      body.about-showcase .about-title { font-size: clamp(35px, 9.2vw, 48px); }
+      body.about-showcase .about-intro { font-size: 14px; margin-top: 19px; }
+      body.about-showcase .about-stats { grid-template-columns: 1fr; gap: 9px; }
+      body.about-showcase .about-stat { min-height: 0; padding: 13px 15px; }
+      body.about-showcase .about-stat strong { font-size: 25px; }
+      body.about-showcase .about-quick-info { grid-template-columns: 1fr; }
+      body.about-showcase .about-quick-item + .about-quick-item { border-left: none; border-top: 1px solid #e5eaf3; }
+      body.about-showcase .about-interest-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      body.about-showcase .about-interest-icon { width: 42px; height: 42px; flex-basis: 42px; }
+      body.about-showcase .about-detail-grid { grid-template-columns: 1fr; }
+      body.about-showcase .about-detail { padding: 35px 0 40px; }
+      body.about-showcase .about-interests { padding: 30px 0 36px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      body.about-showcase .about-actions a { transition: none; }
+    }
+  </style>
+</head>
+<body id="top" class="about-showcase">
+  <!-- ORIGINAL SHARED NAVIGATION -->
+<header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+
+      <a href="index.html" class="brand">
+        <span class="brand-logo">K<span>C</span></span>
+        <span class="brand-details">
+          <strong>Khushal Chauhan</strong>
+          <small>Cybersecurity Professional</small>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="navigation-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="navigation-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active" aria-current="page">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="education.html">Education</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <a href="assets/Khushal_Chauhan_CV.pdf"
+         class="btn btn-dark nav-cv"
+         download="Khushal_Chauhan_CV.pdf">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="18" height="18"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2.2"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             aria-hidden="true">
+          <path d="M12 3v12"/>
+          <path d="m7 10 5 5 5-5"/>
+          <path d="M5 17v3h14v-3"/>
+        </svg>
+
+        <span>Download CV</span>
+      </a>
+
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO INSPIRED BY THE SHARED REFERENCE -->
+    <section class="about-hero" aria-labelledby="about-heading">
+      <img class="about-hero-image" src="assets/queens-university.jpg"
+           alt="Queen's University Belfast Lanyon Building" fetchpriority="high">
+      <div class="container about-hero-inner">
+        <div class="about-hero-copy">
+          <p class="about-eyebrow">About Me</p>
+          <h1 class="about-title" id="about-heading">
+            Passionate about<br>Cybersecurity and
+            <span>Real-World Impact</span>
+          </h1>
+          <p class="about-intro">
+            I am an MSc Applied Cyber Security graduate from Queen's University Belfast (2026),
+            with hands-on experience in IT infrastructure, vulnerability assessment,
+            security investigations and cybersecurity research. I enjoy solving real-world
+            security challenges, analysing threats and helping organisations strengthen
+            their digital security.
+          </p>
+          <div class="about-stats" aria-label="Professional highlights">
+            <div class="about-stat"><strong>1+ Year</strong><span>Infrastructure &amp; security experience</span></div>
+            <div class="about-stat"><strong>60+</strong><span>IT security tickets handled monthly</span></div>
+            <div class="about-stat"><strong>10+</strong><span>Privilege escalation techniques analysed</span></div>
+          </div>
+        </div>
+
+        <aside class="about-quick-info" aria-label="Quick information">
+          <div class="about-quick-item">
+            <span class="about-quick-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </span>
+            <div><strong>Location</strong><span>Manchester, United Kingdom</span></div>
+          </div>
+          <div class="about-quick-item">
+            <span class="about-quick-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>
+            </span>
+            <div><strong>Open to Opportunities</strong><span>Cybersecurity &amp; SOC roles</span></div>
+          </div>
+          <div class="about-quick-item">
+            <span class="about-quick-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <div><strong>Interests</strong><span>Threat Hunting, SOC &amp; Research</span></div>
+          </div>
+        </aside>
+        <p class="about-photo-credit">
+          University photo: <a href="https://commons.wikimedia.org/wiki/File:Lanyon_Building,_Queen%27s_University,_Belfast.jpg" target="_blank" rel="noopener noreferrer">Nick Birse / Wikimedia Commons</a>
+          · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- COMPACT INTERESTS STRIP -->
+    <section class="about-interests" aria-labelledby="interests-heading">
+      <div class="container">
+        <h2 id="interests-heading" class="about-interests-title">My Interests</h2>
+        <div class="about-interest-grid">
+          <div class="about-interest">
+            <span class="about-interest-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+            </span><span>SOC Operations</span>
+          </div>
+          <div class="about-interest">
+            <span class="about-interest-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-4Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </span><span>Threat Detection</span>
+          </div>
+          <div class="about-interest">
+            <span class="about-interest-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3.5h6M9 9h6M9 13h6M9 17h3"/></svg>
+            </span><span>Incident Response</span>
+          </div>
+          <div class="about-interest">
+            <span class="about-interest-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20 16.6A4.5 4.5 0 0 0 18 8h-1.3A7 7 0 0 0 3 10a5 5 0 0 0 2 9h12"/><path d="m14 16 3 3 4-4"/></svg>
+            </span><span>Cloud Security</span>
+          </div>
+          <div class="about-interest">
+            <span class="about-interest-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="10" cy="9" r="5"/><path d="m13 13 7 7M8 9h4M10 7v4"/></svg>
+            </span><span>Cybersecurity Research</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL BACKGROUND BELOW THE REFERENCE-STYLE HERO -->
+    <section class="about-detail" aria-labelledby="detail-heading">
+      <div class="container about-story-grid">
+        <div class="about-story-picture">
+          <img src="assets/profile-about.jpg"
+               alt="Khushal Chauhan outside Queen's University Belfast"
+               loading="lazy">
+        </div>
+        <div class="about-story-copy">
+          <p class="about-eyebrow">My Background</p>
+          <h2 id="detail-heading">Hands-on security experience, backed by research.</h2>
+          <p>
+            My background combines an MSc in Applied Cyber Security from Queen's University Belfast
+            with a B.Tech in Computer Engineering specialising in Cybersecurity from Vishwakarma
+            University, Pune.
+          </p>
+          <p>
+            During my time at Bekaert Industries, I gained practical experience in vulnerability
+            assessment and penetration testing across enterprise networks, servers, endpoints and
+            CCTV systems, alongside Active Directory administration and IT infrastructure security.
+            I have also worked on security alert investigation and reporting exercises, analysing
+            suspicious network and endpoint activity and supporting remediation decisions.
+          </p>
+          <p>
+            My academic research includes studying privilege escalation techniques through
+            Vishwakarma University and Binghamton University collaboration, as well as investigating
+            Android greyware security during my MSc. I continue to expand my cloud security knowledge
+            and build practical labs to turn technical learning into effective security outcomes.
+          </p>
+          <div class="about-actions">
+            <a href="experience.html" class="action-primary">Explore My Experience →</a>
+            <a href="projects.html" class="action-secondary">View My Projects →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ORIGINAL SINGLE-ROW FOOTER -->
+<footer class="portfolio-footer-final">
+    <div class="footer-final-container">
+      <div class="footer-final-row">
+
+        <p class="footer-final-copyright">
+          © <span id="current-year">2026</span>
+          Khushal Chauhan. All rights reserved.
+        </p>
+
+        <nav class="footer-final-links"
+             aria-label="Footer navigation">
+
+          <!-- GITHUB -->
+          <a href="https://github.com/Khushal0519"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="footer-final-button">
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 24 24"
+                 fill="currentColor"
+                 aria-hidden="true">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.42 7.88 10.95.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.87-1.55-3.87-1.55-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.35.96.1-.74.4-1.26.73-1.55-2.55-.3-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.3-.52-1.47.11-3.06 0 0 .97-.31 3.17 1.18.92-.26 1.9-.39 2.87-.39s1.95.13 2.87.39c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.35.77 1.05.77 2.12 0 1.54-.01 2.78-.01 3.16 0 .31.21.67.8.55C20.2 21.42 23.5 17.1 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+            </svg>
+
+            <span>GitHub</span>
+          </a>
+
+          <!-- LINKEDIN -->
+          <a href="https://www.linkedin.com/in/khushal-chauhan-66a9b9224/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="footer-final-button">
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.9"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 aria-hidden="true">
+              <rect x="2" y="2"
+                    width="20" height="20" rx="2"/>
+              <path d="M7 10v7"/>
+              <path d="M7 7h.01"/>
+              <path d="M12 17v-7"/>
+              <path d="M12 13a3 3 0 0 1 6 0v4"/>
+            </svg>
+
+            <span>LinkedIn</span>
+          </a>
+
+          <!-- EMAIL -->
+          <a href="mailto:khushal0519@gmail.com"
+             class="footer-final-button">
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.9"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 aria-hidden="true">
+              <rect x="2" y="4"
+                    width="20" height="16" rx="2"/>
+              <path d="m22 7-10 6L2 7"/>
+            </svg>
+
+            <span>Email</span>
+          </a>
+
+          <!-- BACK TO TOP -->
+          <a href="#top" class="footer-final-top">
+            <span>Back to top</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 aria-hidden="true">
+              <path d="M12 19V5"/>
+              <path d="m5 12 7-7 7 7"/>
+            </svg>
+
+          </a>
+
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,879 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Cybersecurity achievements of Khushal Chauhan, including Kainos CTF, hackathons, bug bounty recognition and published research.">
+  <title>Achievements | Khushal Chauhan</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+  <style>
+    .award-banner {
+      position: relative;
+    }
+    .award-banner .award-brand {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 1;
+      width: 78px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 5px 16px rgba(10,25,55,.13);
+    }
+    .award-banner .award-brand--wide {
+      width: 97px;
+    }
+    .award-banner .award-brand img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .award-banner .award-brand--thm img {
+      filter: invert(15%) sepia(80%)
+        saturate(3700%) hue-rotate(343deg)
+        brightness(90%);
+    }
+    .award-banner-visionary .award-brand--vu {
+      width: 76px;
+      height: 76px;
+      padding: 7px;
+    }
+    .award-banner-visionary .award-brand--vu img {
+      border-radius: 6px;
+    }
+    .award-banner-ctf .award-brand--qub {
+      width: 78px;
+      height: 75px;
+      padding: 7px;
+    }
+    .recognition-card .recognition-initial--logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      background: #fff;
+      border: 1px solid #e1e8f5;
+    }
+    .recognition-card .recognition-initial--logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: 55px;
+      max-height: 55px;
+      object-fit: contain;
+    }
+    .recognition-grid .recognition-card--linked {
+      position: relative;
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+    }
+    .recognition-grid .recognition-card--linked:hover {
+      border-color: #2855f3;
+      box-shadow:
+        0 12px 28px rgba(40,85,243,.10);
+    }
+    .recognition-grid .recognition-card--linked:focus-visible {
+      outline: 3px solid #2855f3;
+      outline-offset: 3px;
+    }
+    .recognition-grid .recognition-card--linked::after {
+      content: "↗";
+      position: absolute;
+      top: 18px;
+      right: 19px;
+      color: #2855f3;
+      font-size: 19px;
+      font-weight: 700;
+    }
+    .achievement-card-grid .award-card--linked {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .achievement-card-grid .award-card--linked:hover {
+      border-color: #2855f3;
+      box-shadow: 0 12px 28px rgba(40,85,243,.10);
+    }
+    .achievement-card-grid .award-card--linked:focus-visible {
+      outline: 3px solid #2855f3;
+      outline-offset: 3px;
+    }
+    .publication-grid .publication-card--linked {
+      position: relative;
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .publication-grid .publication-card--linked:hover {
+      border-color: #2855f3;
+      box-shadow: 0 12px 28px rgba(40,85,243,.10);
+    }
+    .publication-grid .publication-card--linked:focus-visible {
+      outline: 3px solid #2855f3;
+      outline-offset: 3px;
+    }
+    @media (max-width: 540px) {
+      .award-banner .award-brand {
+        top: 14px;
+        right: 14px;
+        width: 62px;
+        height: 47px;
+        padding: 8px;
+      }
+      .award-banner .award-brand--wide {
+        width: 80px;
+      }
+      .award-banner-visionary .award-brand--vu,
+      .award-banner-ctf .award-brand--qub {
+        width: 60px;
+        height: 60px;
+        padding: 6px;
+      }
+    }
+    .achievement-hero-visual .achievement-trophy--premium {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 138px;
+      height: 138px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 34px;
+      background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%);
+      border: 1px solid rgba(255,255,255,.9);
+      box-shadow: 0 18px 36px rgba(40,85,243,.12);
+      font-size: 0;
+      line-height: 1;
+      overflow: hidden;
+    }
+    .achievement-trophy--premium svg {
+      width: 94px;
+      height: 94px;
+      display: block;
+    }
+    .achievement-highlights .achievement-highlight-icon--premium {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 64px;
+      width: 64px;
+      height: 64px;
+      padding: 12px;
+      border: 1px solid #dde7fb;
+      border-radius: 17px;
+      background: linear-gradient(145deg,#edf3ff,#e5edff);
+      box-shadow: 0 4px 15px rgba(40,85,243,.045);
+      font-size: 0;
+    }
+    .achievement-highlights .achievement-highlight-icon--premium svg {
+      display: block;
+      width: 33px;
+      height: 33px;
+      flex: 0 0 auto;
+      fill: none;
+      stroke: #2855f3;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .achievement-highlights .achievement-highlight-icon--brand img {
+      position: absolute;
+      inset: 0;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+      margin: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .achievement-highlights .achievement-highlight-icon--thm img {
+      filter: invert(25%) sepia(91%) saturate(2628%)
+              hue-rotate(222deg) brightness(102%);
+    }
+    .achievement-highlights .achievement-highlight-icon--kainos {
+      flex-basis: 72px;
+      width: 72px;
+    }
+    .achievement-highlights .achievement-highlight-icon--kainos img {
+      width: calc(100% - 12px);
+      height: calc(100% - 18px);
+    }
+    .achievement-section-heading .achievement-section-icon svg {
+      display: block;
+      width: 31px;
+      height: 31px;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+    @media (max-width: 540px) {
+      .achievement-hero-visual .achievement-trophy--premium {
+        width: 112px;
+        height: 112px;
+        border-radius: 28px;
+      }
+      .achievement-trophy--premium svg {
+        width: 79px;
+        height: 79px;
+      }
+      .achievement-highlights .achievement-highlight-icon--premium {
+        flex-basis: 58px;
+        width: 58px;
+        height: 58px;
+        padding: 10px;
+      }
+      .achievement-highlights .achievement-highlight-icon--kainos {
+        flex-basis: 66px;
+        width: 66px;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="site-header">
+    <nav class="navbar container"
+         aria-label="Main navigation">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">
+          K<span>C</span>
+        </span>
+        <span class="brand-details">
+          <strong>Khushal Chauhan</strong>
+          <small>Cybersecurity Professional</small>
+        </span>
+      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="navigation-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="navigation-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="achievements.html"
+           class="active"
+           aria-current="page">
+          Achievements
+        </a>
+        <a href="education.html">Education</a>
+        <a href="contact.html">Contact</a>
+      </div>
+     
+<a href="assets/Khushal_Chauhan_CV.pdf"
+   class="btn btn-dark nav-cv"
+   download="Khushal_Chauhan_CV.pdf">
+
+  <svg xmlns="http://www.w3.org/2000/svg"
+       width="18" height="18"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="2.2"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       aria-hidden="true">
+    <path d="M12 3v12"/>
+    <path d="m7 10 5 5 5-5"/>
+    <path d="M5 17v3h14v-3"/>
+  </svg>
+
+  <span>Download CV</span>
+</a>
+
+    </nav>
+  </header>
+  <main>
+    <section class="achievements-page">
+      <div class="container">
+        <div class="achievements-hero">
+          <div class="achievements-hero-content">
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span>
+              ACHIEVEMENTS &amp; RECOGNITION
+            </p>
+            <h1>
+              Milestones that Reflect My
+              <span>Passion for Cybersecurity</span>
+            </h1>
+            <p>
+              From capture-the-flag competitions
+              and hackathons to vulnerability
+              reporting and published research,
+              these milestones reflect my commitment
+              to practical cybersecurity,
+              responsible disclosure and
+              continuous technical development.
+            </p>
+          </div>
+          <div class="achievement-hero-visual">
+            <div class="achievement-trophy achievement-trophy--premium" aria-hidden="true">
+              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="achievement-gold-blue" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#4090ff"/>
+                    <stop offset="100%" stop-color="#2855f3"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="60" cy="60" r="46" fill="#edf3ff"/>
+                <circle cx="60" cy="60" r="39" fill="none" stroke="#b9cdfc" stroke-width="1.6" stroke-dasharray="3 5"/>
+                <path d="M42 38h36v24c0 11-7.8 18-18 18s-18-7-18-18V38Z" fill="url(#achievement-gold-blue)"/>
+                <path d="M42 44H32v8c0 10 7 16 16 16M78 44h10v8c0 10-7 16-16 16" fill="none" stroke="#2855f3" stroke-width="5" stroke-linejoin="round"/>
+                <path d="m60 47 3.7 7.5 8.2 1.2-5.9 5.8 1.4 8.2-7.4-3.9-7.4 3.9 1.4-8.2-5.9-5.8 8.2-1.2Z" fill="#fff"/>
+                <path d="M60 80v10m-14 5h28M51 90h18" fill="none" stroke="#2855f3" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="25" cy="28" r="3" fill="#60a5fa"/>
+                <circle cx="95" cy="30" r="2.5" fill="#60a5fa"/>
+              </svg>
+            </div>
+            <p>Recognising Progress</p>
+            <strong>
+              Research · Compete · Improve
+            </strong>
+          </div>
+        </div>
+        <div class="achievement-highlights">
+          <div class="achievement-highlight">
+            <span class="achievement-highlight-icon achievement-highlight-icon--premium achievement-highlight-icon--brand achievement-highlight-icon--thm" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 5H6a2 2 0 0 0-2 2v4m0 3v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-4"/><path d="m9 10 3 3-3 3m5 0h3"/></svg>
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/tryhackme.svg" alt=""
+                   onload="this.previousElementSibling.style.display='none'"
+                   onerror="this.style.display='none'">
+            </span>
+            <div>
+              <strong>Top 2%</strong>
+              <small>TryHackMe ranking reported in CV</small>
+            </div>
+          </div>
+          <div class="achievement-highlight">
+            <span class="achievement-highlight-icon achievement-highlight-icon--premium achievement-highlight-icon--brand achievement-highlight-icon--kainos" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2 15 8.5l7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1Z"/></svg>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Kainos_Company_Logo.png" alt=""
+                   onload="this.previousElementSibling.style.display='none'"
+                   onerror="this.style.display='none'">
+            </span>
+            <div>
+              <strong>1st Place</strong>
+              <small>Kainos CTF Challenge</small>
+            </div>
+          </div>
+          <div class="achievement-highlight">
+            <span class="achievement-highlight-icon achievement-highlight-icon--premium" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 7v14M12 7C9.3 4.8 6.2 4.2 2 5v14c4.2-.8 7.3-.2 10 2M12 7c2.7-2.2 5.8-2.8 10-2v14c-4.2-.8-7.3-.2-10 2"/><path d="M5 10h3M16 10h3M5 13h3M16 13h3"/></svg>
+            </span>
+            <div>
+              <strong>3</strong>
+              <small>Research papers listed in CV</small>
+            </div>
+          </div>
+          <div class="achievement-highlight">
+            <span class="achievement-highlight-icon achievement-highlight-icon--premium" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2 20 5v6c0 5.1-3 8.8-8 11-5-2.2-8-5.9-8-11V5l8-3Z"/><path d="m8.5 12 2.4 2.5 4.8-5"/></svg>
+            </span>
+            <div>
+              <strong>Multiple</strong>
+              <small>Vulnerability recognitions</small>
+            </div>
+          </div>
+        </div>
+        <section class="achievement-section"
+                 id="competitions">
+          <div class="achievement-section-heading">
+            <span class="achievement-section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v8a5 5 0 0 1-10 0V4ZM7 7H4v2a4 4 0 0 0 4 4M17 7h3v2a4 4 0 0 1-4 4"/></svg></span>
+            <div>
+              <h2>CTF &amp; Cybersecurity Competitions</h2>
+              <p>
+                Competitive challenges that have
+                strengthened my security analysis
+                and problem-solving skills.
+              </p>
+            </div>
+          </div>
+          <div class="achievement-card-grid">
+            <a class="award-card award-card--linked"
+               href="https://tryhackme.com/p/khushal0519"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="View Khushal Chauhan's TryHackMe profile in a new tab">
+              <div class="award-banner award-banner-thm">
+                <span class="award-brand award-brand--thm"
+                      aria-hidden="true">
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@v16/icons/tryhackme.svg"
+                    alt=""
+                    loading="lazy"
+                    onerror="this.parentElement.style.display='none'">
+                </span>
+                <span>TRYHACKME</span>
+                <strong>TOP 2%</strong>
+              </div>
+              <div class="award-body">
+                <span class="award-category">
+                  CYBERSECURITY LABS
+                </span>
+                <h3>TryHackMe — Top 2%</h3>
+                <p>
+                  Ranked within the top 2%
+                  of learners on TryHackMe,
+                  as recorded in my CV.
+                </p>
+                <span class="award-pill">
+                  Platform Ranking
+                </span>
+              </div>
+            </a>
+            <article class="award-card">
+              <div class="award-banner award-banner-kainos">
+                <span class="award-brand award-brand--wide"
+                      aria-hidden="true">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Kainos_Company_Logo.png"
+                    alt=""
+                    loading="lazy"
+                    onerror="this.parentElement.style.display='none'">
+                </span>
+                <span>KAINOS</span>
+                <strong>1ST PLACE</strong>
+              </div>
+              <div class="award-body">
+                <span class="award-category">
+                  CAPTURE THE FLAG
+                </span>
+                <h3>Kainos Cyber Challenge CTF</h3>
+                <p>
+                  Secured first place in the Kainos
+                  cybersecurity capture-the-flag
+                  challenge.
+                </p>
+                <span class="award-pill">
+                  First Place
+                </span>
+              </div>
+            </article>
+            <article class="award-card">
+              <div class="award-banner award-banner-visionary">
+                <span class="award-brand award-brand--vu"
+                      aria-hidden="true">
+                  <img
+                    src="https://akm-img-a-in.tosshub.com/sites/resources/campus/prod/img/logo/2023/8/logo1622549513520.jpg"
+                    alt=""
+                    loading="lazy"
+                    onerror="this.parentElement.style.display='none'">
+                </span>
+                <span>VISIONARY TECHFEST</span>
+                <strong>2ND PLACE</strong>
+              </div>
+              <div class="award-body">
+                <span class="award-category">
+                  HACKATHON
+                </span>
+                <h3>Visionary Techfest Hackathon</h3>
+                <p>
+                  Achieved second place at the
+                  Visionary Techfest Hackathon
+                  involving Binghamton University, USA.
+                </p>
+                <span class="award-pill">
+                  Second Place
+                </span>
+              </div>
+            </article>
+            <article class="award-card">
+              <div class="award-banner award-banner-ibm">
+                <span class="award-brand award-brand--wide"
+                      aria-hidden="true">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
+                    alt=""
+                    loading="lazy"
+                    onerror="this.parentElement.style.display='none'">
+                </span>
+                <span>IBM ICE</span>
+                <strong>3RD PLACE</strong>
+              </div>
+              <div class="award-body">
+                <span class="award-category">
+                  NATIONAL HACKATHON
+                </span>
+                <h3>IBM ICE National Hackathon</h3>
+                <p>
+                  Secured third place in the
+                  National IBM ICE Hackathon.
+                </p>
+                <span class="award-pill">
+                  Third Place
+                </span>
+              </div>
+            </article>
+            <article class="award-card">
+              <div class="award-banner award-banner-ctf">
+                <span class="award-brand award-brand--qub"
+                      aria-hidden="true">
+                  <img
+                    src="assets/qub-crest.png"
+                    alt=""
+                    loading="lazy"
+                    onerror="this.parentElement.style.display='none'">
+                </span>
+                <span>ECIT / CSIT</span>
+                <strong>CTF</strong>
+              </div>
+              <div class="award-body">
+                <span class="award-category">
+                  CTF PARTICIPATION
+                </span>
+                <h3>CSIT Capture the Flag Event</h3>
+                <p>
+                  Participated in a Capture the Flag
+                  event organised by the Centre for
+                  Secure Information Technologies.
+                </p>
+                <span class="award-pill">
+                  Participation
+                </span>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="achievement-section"
+                 id="recognition">
+          <div class="achievement-section-heading">
+            <span class="achievement-section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 20 5v6c0 5.1-3 8.8-8 11-5-2.2-8-5.9-8-11V5l8-3Z"/><path d="m8.5 12 2.4 2.5 4.8-5"/></svg></span>
+            <div>
+              <h2>Bug Bounty &amp; Security Recognition</h2>
+              <p>
+                Recognition received for identifying
+                and reporting security weaknesses.
+              </p>
+            </div>
+          </div>
+          <div class="recognition-grid">
+            <a
+              class="recognition-card recognition-card--linked"
+              href="https://lnkd.in/p/eqBMwAJM"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Proton recognition evidence in a new tab">
+              <span class="recognition-initial recognition-initial--logo">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Proton_AG_Logo_01.svg"
+                  alt="Proton logo"
+                  loading="lazy"
+                  onerror="this.parentElement.textContent='P'">
+              </span>
+              <span class="award-category">
+                BUG BOUNTY
+              </span>
+              <h3>Proton Web Application</h3>
+              <strong>Bug Bounty Award</strong>
+              <p>
+                Received an award for reporting
+                a security vulnerability affecting
+                a Proton web application.
+              </p>
+            </a>
+            <a
+              class="recognition-card recognition-card--linked"
+              href="https://lnkd.in/p/ecnbjR5f"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open NASA recognition evidence in a new tab">
+              <span class="recognition-initial recognition-initial--logo">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg"
+                  alt="NASA logo"
+                  loading="lazy"
+                  onerror="this.parentElement.textContent='N'">
+              </span>
+              <span class="award-category">
+                HALL OF FAME
+              </span>
+              <h3>NASA Web Application</h3>
+              <strong>Hall of Fame Recognition</strong>
+              <p>
+                Recognised in the NASA Hall of Fame
+                for a reported security finding.
+              </p>
+            </a>
+            <a
+              class="recognition-card recognition-card--linked"
+              href="https://www.wave-utilities.co.uk/vulnerability-reporting-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Wave Utilities recognition evidence in a new tab">
+              <span class="recognition-initial recognition-initial--logo">
+                <img
+                  src="https://www.google.com/s2/favicons?domain=wave-utilities.co.uk&amp;sz=128"
+                  alt="Wave Utilities icon"
+                  loading="lazy"
+                  onerror="this.parentElement.textContent='W'">
+              </span>
+              <span class="award-category">
+                HALL OF FAME
+              </span>
+              <h3>Wave Utilities</h3>
+              <strong>Hall of Fame Recognition</strong>
+              <p>
+                Listed in the Wave Utilities
+                Hall of Fame in July 2024
+                for security vulnerability reporting.
+              </p>
+            </a>
+            <article class="recognition-card">
+              <span class="recognition-initial recognition-initial--logo">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
+                  alt="Flag of India"
+                  loading="lazy"
+                  onerror="this.parentElement.textContent='IN'">
+              </span>
+              <span class="award-category">
+                GOVERNMENT RECOGNITION
+              </span>
+              <h3>Government of India</h3>
+              <strong>CWE-287 Acknowledgement</strong>
+              <p>
+                Received acknowledgement for
+                reporting a vulnerability associated
+                with CWE-287, Improper Authentication.
+              </p>
+            </article>
+          </div>
+        </section>
+        <section class="achievement-section"
+                 id="publications">
+          <div class="achievement-section-heading">
+            <span class="achievement-section-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h11l5 5v13H4Z"/><path d="M15 3v5h5M8 12h8M8 16h8M8 8h3"/></svg></span>
+            <div>
+              <h2>Research Publications</h2>
+              <p>
+                Published work covering ethical
+                hacking, data privacy and
+                security incident response.
+              </p>
+            </div>
+          </div>
+          <div class="publication-grid">
+            <a class="publication-card publication-card--linked"
+               href="https://www.irjmets.com/uploadedfiles/paper/issue_9_september_2023/44859/final/fin_irjmets1695749724.pdf"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Read Cybersecurity in the Modern World: Ethical Hacking in a new tab">
+              <span class="publication-year">
+                2023
+              </span>
+              <div class="publication-icon">01</div>
+              <h3>
+                Cybersecurity in the Modern World:
+                Ethical Hacking
+              </h3>
+              <p class="publication-journal">
+                International Research Journal of
+                Modernization in Engineering Technology
+                and Science
+              </p>
+              <p>
+                Volume 05, Issue 09 · September 2023
+              </p>
+            </a>
+            <a class="publication-card publication-card--linked"
+               href="https://www.ijsr.net/getabstract.php?paperid=SR24906110537"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Read Tracing the Impact of GDPR on Global Data Privacy in a new tab">
+              <span class="publication-year">
+                2024
+              </span>
+              <div class="publication-icon">02</div>
+              <h3>
+                Tracing the Impact of GDPR on
+                Global Data Privacy
+              </h3>
+              <p class="publication-journal">
+                International Journal of Science
+                and Research (IJSR)
+              </p>
+              <p>
+                Volume 13, Issue 9 · September 2024
+              </p>
+            </a>
+            <article class="publication-card">
+              <span class="publication-year">
+                2024
+              </span>
+              <div class="publication-icon">03</div>
+              <h3>
+                Security Incident Response Simulation
+                Project: Social Engineering Attack
+              </h3>
+              <p class="publication-journal">
+                Science Management Design Journal
+              </p>
+              <p>
+                Volume 2, Issue 2 · 17 June 2024
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+    <section class="achievement-bottom">
+      <div class="container achievement-bottom-inner">
+        <div>
+          <p class="section-eyebrow">
+            ACADEMIC DEVELOPMENT
+          </p>
+          <h2>
+            Explore My Education &amp; Certifications
+          </h2>
+          <p>
+            Learn about my academic qualifications,
+            industry certifications and
+            professional training.
+          </p>
+        </div>
+        <a href="education.html"
+           class="btn btn-primary">
+          View Education →
+        </a>
+      </div>
+    </section>
+  </main>
+  
+<!-- ======================================
+     FINAL PROFESSIONAL PORTFOLIO FOOTER
+======================================= -->
+
+<footer class="portfolio-footer-final">
+
+  <div class="footer-final-container">
+
+    <div class="footer-final-row">
+
+      <!-- COPYRIGHT -->
+      <p class="footer-final-copyright">
+        © <span id="current-year">2026</span>
+        Khushal Chauhan. All rights reserved.
+      </p>
+
+      <!-- SOCIAL LINKS -->
+      <nav class="footer-final-links"
+           aria-label="Footer navigation">
+
+        <!-- GITHUB -->
+        <a href="https://github.com/Khushal0519"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="footer-final-button">
+
+          <svg xmlns="http://www.w3.org/2000/svg"
+               viewBox="0 0 24 24"
+               fill="currentColor"
+               aria-hidden="true">
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.42 7.88 10.95.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.87-1.55-3.87-1.55-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.35.96.1-.74.4-1.26.73-1.55-2.55-.3-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.3-.52-1.47.11-3.06 0 0 .97-.31 3.17 1.18.92-.26 1.9-.39 2.87-.39s1.95.13 2.87.39c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.35.77 1.05.77 2.12 0 1.54-.01 2.78-.01 3.16 0 .31.21.67.8.55C20.2 21.42 23.5 17.1 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+          </svg>
+
+          <span>GitHub</span>
+        </a>
+
+        <!-- LINKEDIN -->
+        <a href="https://www.linkedin.com/in/khushal-chauhan-66a9b9224/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="footer-final-button">
+
+          <svg xmlns="http://www.w3.org/2000/svg"
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="1.9"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               aria-hidden="true">
+
+            <rect x="2" y="2"
+                  width="20" height="20" rx="2"/>
+            <path d="M7 10v7"/>
+            <path d="M7 7h.01"/>
+            <path d="M12 17v-7"/>
+            <path d="M12 13a3 3 0 0 1 6 0v4"/>
+          </svg>
+
+          <span>LinkedIn</span>
+        </a>
+
+        <!-- EMAIL -->
+        <a href="mailto:khushal0519@gmail.com"
+           class="footer-final-button">
+
+          <svg xmlns="http://www.w3.org/2000/svg"
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="1.9"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               aria-hidden="true">
+
+            <rect x="2" y="4"
+                  width="20" height="16" rx="2"/>
+            <path d="m22 7-10 6L2 7"/>
+          </svg>
+
+          <span>Email</span>
+        </a>
+
+        <!-- BACK TO TOP -->
+        <a href="#top"
+           class="footer-final-top">
+
+          <span>Back to top</span>
+
+          <svg xmlns="http://www.w3.org/2000/svg"
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               aria-hidden="true">
+
+            <path d="M12 19V5"/>
+            <path d="m5 12 7-7 7 7"/>
+          </svg>
+
+        </a>
+
+      </nav>
+
+    </div>
+  </div>
+
+</footer>
+
+</body>
+</html>
